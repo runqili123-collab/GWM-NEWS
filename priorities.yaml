@@ -1,0 +1,103 @@
+# GWM LatAm News Monitor v2 - Dimension Priority Weights
+
+dimension_weights:
+  politics:
+    arancel: 5
+    importación: 4
+    exportación: 4
+    tratado: 4
+    acuerdo: 4
+    gobierno: 2
+    elecciones: 2
+    inflación: 2
+    PIB: 2
+    inversión: 3
+    decreto: 3
+    ley: 3
+    ministro: 2
+    presidente: 2
+  
+  economy:
+    arancel: 4
+    inflación: 5
+    devaluación: 5
+    revaluación: 5
+    PIB: 5
+    tipo_de_cambio: 4
+    dólar: 4
+    inversión: 4
+    ventas: 3
+    crecimiento: 3
+    banco_central: 4
+    interés: 4
+    combustible: 4
+    gasolina: 3
+    desempleo: 3
+    FMI: 4
+    IED: 4
+  
+  automotive:
+    arancel: 5
+    importación: 5
+    lanzamiento: 5
+    ventas: 5
+    eléctrico: 5
+    híbrido: 5
+    concesionario: 4
+    automóvil: 5
+    vehículo: 5
+    SUV: 5
+    pickup: 5
+    camioneta: 5
+    combustible: 3
+    inflación: 3
+    mercado: 4
+    marca: 3
+    modelo: 3
+    proveedor: 4
+    planta: 4
+    producción: 4
+  
+  user_voice:
+    reseña: 5
+    opinión: 5
+    review: 5
+    calidad: 4
+    garantía: 4
+    servicio: 4
+    queja: 3
+    experiencia: 4
+    reclamo: 3
+    satisfacción: 4
+    problema: 3
+    solución: 3
+
+timeliness:
+  within_12h: 2
+  within_24h: 1
+  within_48h: 0
+
+source_authority:
+  authority_boost: 1
+  sources:
+    - "El Tiempo"
+    - "Bloomberg"
+    - "Bloomberg Linea"
+    - "Reuters"
+    - "Portafolio"
+    - "La Republica"
+    - "El Comercio"
+    - "Gestion"
+    - "Andina"
+    - "Semana"
+    - "El Espectador"
+    - "El Universo"
+    - "El Nacional"
+    - "Primicias"
+
+penalty:
+  forced_association: -3
+  duplicate: -2
+  superficial_mention: -1
+  unrelated_country: -2
+
