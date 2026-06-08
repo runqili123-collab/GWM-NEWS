@@ -1,0 +1,20 @@
+# GWM LatAm News Monitor v2 - Dependencies
+
+# RSS Feed Parsing
+feedparser>=6.0.11
+
+# HTTP Requests
+requests>=2.31.0
+
+# YAML Configuration
+pyyaml>=6.0.1
+
+# OpenAI Compatible API Client
+openai>=1.12.0
+
+# Date Parsing Utilities
+python-dateutil>=2.8.2
+
+# Image Processing
+Pillow>=10.2.0
+
