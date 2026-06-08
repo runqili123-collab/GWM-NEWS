@@ -1,0 +1,55 @@
+# GWM LatAm News Monitor v2 - System Settings
+
+ai:
+  provider: "deepseek"
+  model: "deepseek-chat"
+  api_base: "https://api.deepseek.com/v1"
+  temperature: 0.0
+  max_tokens: 800
+  concurrency: 4
+  max_retries: 3
+
+rss:
+  max_items_per_feed: 15
+  timeout_seconds: 30
+  user_agent: "GWM-LatAm-News-Monitor/2.0"
+  max_workers: 4
+
+link_verification:
+  enabled: true
+  timeout_seconds: 8
+  retries: 1
+  verify_method: "HEAD"
+
+dingtalk:
+  max_message_size: 18000
+  split_by_country: true
+  use_markdown: true
+
+dedup:
+  history_days: 3
+  similarity_threshold: 0.55
+  history_dir: "output/history"
+  url_dedup: true
+  title_dedup: true
+
+priorities:
+  top_n_per_dimension: 3
+  candidate_n_per_dimension: 5
+  min_relevance_score: 2
+
+country_order:
+  - colombia
+  - peru
+  - ecuador
+  - venezuela
+  - caribbean
+
+report_language: "zh"
+timezone: "America/Bogota"
+
+output:
+  markdown_dir: "output/markdown"
+  image_dir: "output/images"
+  keep_images: true
+
