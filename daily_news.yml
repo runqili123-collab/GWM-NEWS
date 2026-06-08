@@ -1,0 +1,97 @@
+name: GWM LatAm Daily News v2
+
+on:
+  schedule:
+    # UTC 0:00 = 北京时间 8:00 (早晨推送)
+    - cron: '0 0 * * *'
+    # UTC 4:00 = 北京时间 12:00 (午间补抓)
+    - cron: '0 4 * * *'
+  workflow_dispatch:
+    inputs:
+      force_run:
+        description: '强制运行（忽略重复推送保护）'
+        required: false
+        default: 'false'
+
+jobs:
+  fetch-news:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          cache: 'pip'
+      
+      - name: Install Dependencies
+        run: |
+          pip install --upgrade pip
+          pip install -r requirements.txt
+      
+      - name: Check Force Run Flag
+        id: check_force
+        run: |
+          if [ "${{ github.event.inputs.force_run }}" == "true" ]; then
+            echo "forced=true" >> $GITHUB_OUTPUT
+          else
+            echo "forced=false" >> $GITHUB_OUTPUT
+          fi
+      
+      - name: Remove Daily Flag (if forced)
+        if: steps.check_force.outputs.forced == 'true'
+        run: |
+          TODAY=$(date +%Y-%m-%d)
+          rm -f output/history/sent_${TODAY}.flag
+          echo "已移除今日推送标记，将强制运行"
+      
+      - name: Run News Monitor v2
+        working-directory: src
+        env:
+          AI_API_KEY: ${{ secrets.AI_API_KEY }}
+          DINGTALK_WEBHOOK: ${{ secrets.DINGTALK_WEBHOOK }}
+          PYTHONUNBUFFERED: "1"
+        run: |
+          python main.py 2>&1
+        continue-on-error: true
+      
+      - name: Check Run Status
+        run: |
+          if [ -f output/history/sent_$(date +%Y-%m-%d).flag ]; then
+            echo "✅ 今日新闻推送成功"
+          else
+            echo "⚠️ 推送状态未知，请检查日志"
+          fi
+      
+      - name: Upload Artifacts
+        uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: news-report-v2-${{ github.run_number }}-${{ github.run_attempt }}
+          path: |
+            output/
+            !output/history/sent_*.flag
+          retention-days: 30
+      
+      - name: Commit and Push Output
+        if: always()
+        run: |
+          git config --local user.email "gwm-news-monitor[bot]@users.noreply.github.com"
+          git config --local user.name "GWM News Monitor Bot"
+          
+          # 检查是否有变更
+          git add output/ || true
+          
+          if git diff --staged --quiet; then
+            echo "没有新的输出需要提交"
+          else
+            git commit -m "📰 v2每日情报 $(date +%Y-%m-%d_%H:%M)"
+            git push || echo "推送失败（可能没有推送权限）"
+          fi
+
