@@ -1,0 +1,272 @@
+# GWM LatAm News Monitor v2 - RSS Sources Configuration
+# 5 countries × 4 dimensions
+
+countries:
+  colombia:
+    name: "哥伦比亚"
+    name_en: "Colombia"
+    flag: "🇨🇴"
+    timezone: "America/Bogota"
+    currency: "COP"
+    dimensions:
+      politics:
+        primary:
+          - name: "El Tiempo"
+            rss: "https://www.eltiempo.com/rss/colombia.xml"
+            language: "es"
+          - name: "El Espectador"
+            rss: "https://www.elespectador.com/rss/"
+            language: "es"
+          - name: "Semana"
+            rss: "https://www.semana.com/rss/feed"
+            language: "es"
+        secondary:
+          - name: "Bloomberg Linea"
+            rss: "https://www.bloomberglinea.com/arc/outboundfeeds/tags-feed.xml"
+            language: "es"
+            country_lock: false
+      economy:
+        primary:
+          - name: "Portafolio"
+            rss: "https://www.portafolio.co/rss/"
+            language: "es"
+          - name: "La Republica"
+            rss: "https://www.larepublica.co/rss"
+            language: "es"
+          - name: "El Tiempo Economia"
+            rss: "https://www.eltiempo.com/rss/economia.xml"
+            language: "es"
+        secondary:
+          - name: "Bloomberg Linea"
+            rss: "https://www.bloomberglinea.com/arc/outboundfeeds/tags-feed.xml"
+            language: "es"
+            country_lock: false
+      automotive:
+        primary:
+          - name: "El Carro Colombiano"
+            rss: "https://elcarrocolombiano.com/feed/"
+            language: "es"
+          - name: "Autocosmos Colombia"
+            rss: "https://noticias.autocosmos.com.co/rss/"
+            language: "es"
+          - name: "Panorama Automotor"
+            rss: "https://panoramaautomotor.com/feed/"
+            language: "es"
+        secondary: []
+      user_voice:
+        primary:
+          - name: "Google News Colombia Opinion"
+            rss: "https://news.google.com/rss/search?q=Colombia+automóvil+opinión+reseña&hl=es-419&gl=CO&ceid=CO:es"
+            language: "es"
+        secondary: []
+
+  peru:
+    name: "秘鲁"
+    name_en: "Peru"
+    flag: "🇵🇪"
+    timezone: "America/Lima"
+    currency: "PEN"
+    dimensions:
+      politics:
+        primary:
+          - name: "El Comercio"
+            rss: "https://elcomercio.pe/rss/politica.xml"
+            language: "es"
+          - name: "Andina"
+            rss: "https://andina.pe/rss/portada.xml"
+            language: "es"
+          - name: "Peru21"
+            rss: "https://peru21.pe/rss/portada.xml"
+            language: "es"
+        secondary:
+          - name: "Bloomberg Linea"
+            rss: "https://www.bloomberglinea.com/arc/outboundfeeds/tags-feed.xml"
+            language: "es"
+            country_lock: false
+      economy:
+        primary:
+          - name: "Gestion"
+            rss: "https://gestion.pe/rss/economia.xml"
+            language: "es"
+          - name: "El Comercio Economia"
+            rss: "https://elcomercio.pe/rss/economia.xml"
+            language: "es"
+          - name: "RPP"
+            rss: "https://rpp.pe/rss/portada.xml"
+            language: "es"
+        secondary:
+          - name: "Bloomberg Linea"
+            rss: "https://www.bloomberglinea.com/arc/outboundfeeds/tags-feed.xml"
+            language: "es"
+            country_lock: false
+      automotive:
+        primary:
+          - name: "Autocosmos Peru"
+            rss: "https://noticias.autocosmos.com.pe/rss/"
+            language: "es"
+          - name: "Google News Peru Automotive"
+            rss: "https://news.google.com/rss/search?q=Perú+automóvil+carro+vehículo&hl=es-419&gl=PE&ceid=PE:es"
+            language: "es"
+        secondary: []
+      user_voice:
+        primary:
+          - name: "Google News Peru Opinion"
+            rss: "https://news.google.com/rss/search?q=Perú+automóvil+opinión+reseña+experiencia&hl=es-419&gl=PE&ceid=PE:es"
+            language: "es"
+        secondary: []
+
+  ecuador:
+    name: "厄瓜多尔"
+    name_en: "Ecuador"
+    flag: "🇪🇨"
+    timezone: "America/Guayaquil"
+    currency: "USD"
+    dimensions:
+      politics:
+        primary:
+          - name: "El Universo"
+            rss: "https://www.eluniverso.com/rss/ecuador.xml"
+            language: "es"
+          - name: "El Comercio Ecuador"
+            rss: "https://www.elcomercio.com/rss"
+            language: "es"
+          - name: "Primicias"
+            rss: "https://www.primicias.ec/feed/"
+            language: "es"
+        secondary:
+          - name: "Bloomberg Linea"
+            rss: "https://www.bloomberglinea.com/arc/outboundfeeds/tags-feed.xml"
+            language: "es"
+            country_lock: false
+      economy:
+        primary:
+          - name: "El Universo Economia"
+            rss: "https://www.eluniverso.com/rss/ecuador.xml"
+            language: "es"
+          - name: "Primicias Economia"
+            rss: "https://www.primicias.ec/feed/"
+            language: "es"
+        secondary:
+          - name: "Bloomberg Linea"
+            rss: "https://www.bloomberglinea.com/arc/outboundfeeds/tags-feed.xml"
+            language: "es"
+            country_lock: false
+      automotive:
+        primary:
+          - name: "Google News Ecuador Automotive"
+            rss: "https://news.google.com/rss/search?q=Ecuador+automóvil+carro+vehículo&hl=es-419&gl=EC&ceid=EC:es"
+            language: "es"
+        secondary: []
+      user_voice:
+        primary:
+          - name: "Google News Ecuador Opinion"
+            rss: "https://news.google.com/rss/search?q=Ecuador+automóvil+opinión+reseña+experiencia&hl=es-419&gl=EC&ceid=EC:es"
+            language: "es"
+        secondary: []
+
+  venezuela:
+    name: "委内瑞拉"
+    name_en: "Venezuela"
+    flag: "🇻🇪"
+    timezone: "America/Caracas"
+    currency: "VES"
+    dimensions:
+      politics:
+        primary:
+          - name: "El Nacional"
+            rss: "https://www.elnacional.com/rss/"
+            language: "es"
+          - name: "Ultimas Noticias"
+            rss: "https://www.ultimasnoticias.com.ve/feed/"
+            language: "es"
+        secondary:
+          - name: "Bloomberg Linea"
+            rss: "https://www.bloomberglinea.com/arc/outboundfeeds/tags-feed.xml"
+            language: "es"
+            country_lock: false
+      economy:
+        primary:
+          - name: "El Nacional Economia"
+            rss: "https://www.elnacional.com/rss/"
+            language: "es"
+          - name: "Ultimas Noticias Economia"
+            rss: "https://www.ultimasnoticias.com.ve/feed/"
+            language: "es"
+        secondary:
+          - name: "Bloomberg Linea"
+            rss: "https://www.bloomberglinea.com/arc/outboundfeeds/tags-feed.xml"
+            language: "es"
+            country_lock: false
+      automotive:
+        primary:
+          - name: "Google News Venezuela Automotive"
+            rss: "https://news.google.com/rss/search?q=Venezuela+automóvil+carro+vehículo&hl=es-419&gl=VE&ceid=VE:es"
+            language: "es"
+        secondary: []
+      user_voice:
+        primary:
+          - name: "Google News Venezuela Opinion"
+            rss: "https://news.google.com/rss/search?q=Venezuela+automóvil+opinión+reseña+experiencia&hl=es-419&gl=VE&ceid=VE:es"
+            language: "es"
+        secondary: []
+
+  caribbean:
+    name: "加勒比"
+    name_en: "Caribbean"
+    flag: "🌴"
+    timezone: "America/Jamaica"
+    currency: "JMD"
+    dimensions:
+      politics:
+        primary:
+          - name: "Jamaica Observer"
+            rss: "https://www.jamaicaobserver.com/feed/"
+            language: "en"
+          - name: "Caribbean News Global"
+            rss: "https://caribbeannewsglobal.com/feed/"
+            language: "en"
+          - name: "Diario Libre"
+            rss: "https://www.diariolibre.com/rss"
+            language: "es"
+        secondary:
+          - name: "Bloomberg Linea"
+            rss: "https://www.bloomberglinea.com/arc/outboundfeeds/tags-feed.xml"
+            language: "es"
+            country_lock: false
+      economy:
+        primary:
+          - name: "Jamaica Observer Economia"
+            rss: "https://www.jamaicaobserver.com/feed/"
+            language: "en"
+          - name: "News Americas"
+            rss: "https://newsamericasnow.com/feed/"
+            language: "en"
+        secondary:
+          - name: "Bloomberg Linea"
+            rss: "https://www.bloomberglinea.com/arc/outboundfeeds/tags-feed.xml"
+            language: "es"
+            country_lock: false
+      automotive:
+        primary:
+          - name: "Google News Caribbean Automotive"
+            rss: "https://news.google.com/rss/search?q=Caribbean+automobile+car+vehicle&hl=en-US&gl=JM&ceid=JM:en"
+            language: "en"
+        secondary: []
+      user_voice:
+        primary:
+          - name: "Google News Caribbean Opinion"
+            rss: "https://news.google.com/rss/search?q=Caribbean+automobile+opinion+review+experience&hl=en-US&gl=JM&ceid=JM:en"
+            language: "en"
+        secondary: []
+
+# Shared sources (multi-country, no country lock by default)
+shared_sources:
+  - name: "Bloomberg Linea"
+    rss: "https://www.bloomberglinea.com/arc/outboundfeeds/tags-feed.xml"
+    language: "es"
+    country_lock: false
+  - name: "Reuters LatAm"
+    rss: "https://www.reutersagency.com/feed/?taxonomy=best-topics&post_type=best"
+    language: "es"
+    country_lock: false
+
