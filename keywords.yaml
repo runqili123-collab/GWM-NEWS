@@ -1,0 +1,181 @@
+# GWM LatAm News Monitor v2 - Keywords Configuration
+
+blacklist:
+  # Motorcycles (exclude)
+  - "motocicleta"
+  - "moto"
+  - "motocross"
+  - "scooter"
+  
+  # Crime and violence (exclude)
+  - "crimen"
+  - "homicidio"
+  - "asesinato"
+  - "narcotráfico"
+  - "secuestro"
+  - "extorsión"
+  - "pandilla"
+  - "bomba"
+  - "terrorismo"
+  - "violencia"
+  
+  # Geo-political conflicts (exclude)
+  - "Oriente Medio"
+  - "Middle East"
+  - "Ucrania"
+  - "Ukraine"
+  - "Gaza"
+  - "Israel"
+  - "Palestina"
+  
+  # Irrelevant topics
+  - "farándula"
+  - "celebridad"
+  - "fútbol"
+  - "deporte"
+
+whitelist_boost:
+  automotive_core:
+    score: 5
+    keywords:
+      - "automóvil"
+      - "vehículo"
+      - "SUV"
+      - "pickup"
+      - "camioneta"
+      - "arancel"
+      - "importación"
+      - "exportación"
+      - "ventas"
+      - "lanzamiento"
+      - "eléctrico"
+      - "hibrido"
+      - "concesionario"
+      - "fabricante"
+      - "marca"
+      - "modelo"
+      - "automotriz"
+      - "autos"
+      - "carro"
+  
+  automotive_indirect:
+    score: 3
+    keywords:
+      - "combustible"
+      - "gasolina"
+      - "diésel"
+      - "GLP"
+      - "GNV"
+      - "infraestructura"
+      - "recarga"
+      - "cadena de suministro"
+      - "puerto"
+      - "logística"
+      - "transporte"
+      - "tráfico"
+      - "peaje"
+  
+  economic_env:
+    score: 2
+    keywords:
+      - "inflación"
+      - "devaluación"
+      - "revaluación"
+      - "PIB"
+      - "tipo de cambio"
+      - "dólar"
+      - "banco central"
+      - "IED"
+      - "inversión"
+      - "crecimiento"
+      - "desempleo"
+      - "FMI"
+      - "BM"
+      - "Banco Mundial"
+
+country_keywords:
+  colombia:
+    - "Colombia"
+    - "colombiano"
+    - "colombiana"
+    - "Bogotá"
+    - "Petro"
+    - "Nariño"
+  peru:
+    - "Perú"
+    - "peruano"
+    - "peruana"
+    - "Lima"
+    - "Castillo"
+    - "Boluarte"
+  ecuador:
+    - "Ecuador"
+    - "ecuatoriano"
+    - "ecuatoriana"
+    - "Quito"
+    - "Guayaquil"
+    - "Noboa"
+  venezuela:
+    - "Venezuela"
+    - "venezolano"
+    - "venezolana"
+    - "Caracas"
+    - "Maduro"
+  caribbean:
+    - "Caribe"
+    - "Caribbean"
+    - "Jamaica"
+    - "Jamaican"
+    - "República Dominicana"
+    - "Trinidad"
+    - "Barbados"
+    - "CARICOM"
+    - "Haití"
+
+dimension_keywords:
+  politics:
+    - "gobierno"
+    - "presidente"
+    - "ministro"
+    - "congreso"
+    - "parlamento"
+    - "elección"
+    - "política"
+    - "ministerio"
+    - "decreto"
+    - "ley"
+    - "senado"
+  economy:
+    - "economía"
+    - "económico"
+    - "banco"
+    - "mercado"
+    - "bolsa"
+    - "dólar"
+    - "inflación"
+    - "recesión"
+    - "crecimiento"
+    - "finanzas"
+  automotive:
+    - "automóvil"
+    - "vehículo"
+    - "carro"
+    - "auto"
+    - "SUV"
+    - "camioneta"
+    - "concesionario"
+    - "fabricante"
+    - "ventas"
+    - "lanzamiento"
+  user_voice:
+    - "opinión"
+    - "reseña"
+    - "review"
+    - "experiencia"
+    - "queja"
+    - "reclamo"
+    - "testimonio"
+    - "satisfacción"
+    - "calidad"
+    - "garantía"
+
